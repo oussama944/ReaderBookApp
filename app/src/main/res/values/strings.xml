@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppReader</string>
+    <string name="Create_acount">Entrer un email valid et un mot de passe de 6 caractères </string>
+</resources>
