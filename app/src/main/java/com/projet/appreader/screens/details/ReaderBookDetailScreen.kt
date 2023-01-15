@@ -96,6 +96,8 @@ fun ShowBookDetails(
     val bookData = bookInfo.data?.volumeInfo
     val googleBookId = bookInfo.data?.id
 
+
+
     Card(
         modifier = Modifier.padding(34.dp),
         shape = CircleShape,
@@ -124,7 +126,7 @@ fun ShowBookDetails(
     Text(text = "Published: ${bookData?.publishedDate.toString()}",
         style = MaterialTheme.typography.subtitle1)
 
-    
+
     Spacer(modifier = Modifier.height(5.dp))
 
 
@@ -143,7 +145,11 @@ fun ShowBookDetails(
 
     ) {
 
-        val cleanDescription = HtmlCompat.fromHtml(bookData!!.description,HtmlCompat.FROM_HTML_MODE_COMPACT).toString()
+        val cleanDescription = if (!bookData?.description.isNullOrEmpty()){
+            HtmlCompat.fromHtml(bookData!!.description,HtmlCompat.FROM_HTML_MODE_COMPACT).toString()
+        } else {"Pas de description"}
+
+
         LazyColumn(
             modifier = Modifier.padding(3.dp)
         ){

@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(
         getAllBooksFromFireBase()
     }
 
-    private fun getAllBooksFromFireBase() {
+    fun getAllBooksFromFireBase() {
         viewModelScope.launch {
             data.value.loading = true
             data.value = repository.getAllBooksFromDatabase()
