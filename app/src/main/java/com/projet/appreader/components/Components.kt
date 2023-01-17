@@ -245,7 +245,7 @@ fun ListCard(
                         modifier = Modifier.padding(bottom = 1.dp)
                     )
 
-                    BookRating(score = 3.5)
+                    BookRating(score = book.rating!!)
                 }
             }
 
@@ -263,11 +263,22 @@ fun ListCard(
                 style = MaterialTheme.typography.caption
             )
         }
+
+        val isStartedReading = remember {
+            mutableStateOf(false)
+        }
+
+
         Row(
             horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.Bottom,
         ) {
-            RoundedBtn(label = "Les lectures", radius = 70)
+
+            isStartedReading.value = book.startedReading != null
+
+
+            RoundedBtn(label = if (isStartedReading.value)"Les lectures" else "Lire", radius = 70)
+
         }
 
 
