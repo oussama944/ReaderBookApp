@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">AppReader</string>
     <string name="Create_acount">Entrer un email valid et un mot de passe de 6 caractères </string>
+    <string name="action">Cette action est irreversibles</string>
+    <string name="sure">Es-tu sure de vouloir supprimer?</string>
 </resources>
