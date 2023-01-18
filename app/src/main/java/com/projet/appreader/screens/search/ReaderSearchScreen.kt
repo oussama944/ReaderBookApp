@@ -1,6 +1,5 @@
 package com.projet.appreader.screens.search
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -23,12 +22,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-
 import coil.compose.rememberImagePainter
 import com.projet.appreader.components.InputField
 import com.projet.appreader.components.ReaderAppBar
 import com.projet.appreader.model.Item
-import com.projet.appreader.model.MBook
 import com.projet.appreader.navigation.ReaderScreens
 
 @Composable
@@ -163,10 +160,9 @@ fun CardItemSearch(
         Row(
             modifier = Modifier.padding(5.dp)
         ){
-            var imageUrl: String =  "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=80&q=80"
-            if (book.volumeInfo.imageLinks != null)
-                if (book.volumeInfo.imageLinks.smallThumbnail.isNotEmpty())
-                    imageUrl= book.volumeInfo.imageLinks.smallThumbnail
+            var imageUrl =  "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=80&q=80"
+            if (book.volumeInfo.imageLinks.smallThumbnail.isNotEmpty())
+                imageUrl= book.volumeInfo.imageLinks.smallThumbnail
 
 
             Image(
