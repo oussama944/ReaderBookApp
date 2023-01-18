@@ -92,7 +92,7 @@ fun SearchForm(
 
         InputField(
             valueState = searchQuerieState,
-            labelId = "Rechercher",
+            labelId = "Recherche",
             enabled = true,
             onAction = KeyboardActions{
                 if(!valid) return@KeyboardActions
